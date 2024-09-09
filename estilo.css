@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background: none;
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+}
+
+#logoEsquina {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: auto;
+    z-index: 1000; 
+}
+
+h1 {
+    width: fit-content;
+    background-color: #fff;
+    margin: 40px auto;
+    border-radius: 60px;
+    box-shadow: 5px 5px 0 #000;
+    padding: 20px 30px;
+    font-size: 2em; 
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    font-size: 12px;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#pantalla-inicial, #pantalla-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+ 
+}
+
+.btn {
+    border: none;
+    background: #34289e; 
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2em; 
+    transition: transform 0.3s, background 0.3s;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    margin-top: 20px; 
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #382c44; 
+}
+
+.btn::before {
+    content: "🎮";
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+#pantalla-inicial h1, #pantalla-final h2 {
+    font-size: 2em; 
+    color: #030303; 
+    margin-bottom: 20px; 
+}
+
+#pantalla-final .resultado {
+    font-size: 1.5em; 
+    color: #070707; 
+    margin: 10px 0; 
+}
+
+#pantalla-juego {
+    display: none;
+}
+
+.pantalla-juego {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.pantalla-juego img {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 5px solid #0d0d0e;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.pantalla-juego img:hover {
+    transform: scale(1.05);
+}
+
+.pantalla-juego .pregunta {
+    font-size: 1.5em; 
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+}
+
+.pantalla-juego .opciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.opcion {
+    display: flex;
+    justify-content: center; /
+    align-items: center;
+    margin: 10px auto;
+    cursor: pointer;
+    width: 80%;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.opcion:hover {
+    transform: scale(1.1); 
+}
+
+
+.opcion .letra {
+    font-size: 30px; 
+    background-color: #6414f8ce;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 50px;
+    margin-right: 10px;
+}
+
+.opcion .nombre {
+    font-size: 25px; 
+    background: #fff;
+    flex: 1;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center; 
+    display: inline-block;
+    max-width: 50%;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+.float:hover {
+	text-decoration: none;
+	color: #25d366;
+  background-color:#fff;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+.opcion .nombreAcertada {
+    background-color: yellowgreen;
+    color: #fff;
+}
+
+.opcion .letraAcertada {
+    background-color: yellowgreen;
+    color: #fff;
+}
+
+.opcion .nombreNoAcertada {
+    background-color: darkred;
+    color: #fff;
+}
+
+.opcion .letraNoAcertada {
+    background-color: darkred;
+    color: #fff;
+}
+
+#pantalla-final {
+    display: none;
+}
+
+#pantalla-final #numCorrectas, #pantalla-final #numIncorrectas {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 50px;
+}
+
+#pantalla-final #numCorrectas {
+    background-color: chartreuse;
+}
+
+#pantalla-final #numIncorrectas {
+    background-color: darkred;
+}
+
+
+#pantalla-final .resultado {
+    font-size: 2em; 
+    margin: 20px 0;
+}
+
+#pantalla-inicial h2 {
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+}
+  body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em; 
+    }
+
+    .btn {
+        font-size: 1em; 
+        padding: 10px 20px;
+    }
+
+    .pantalla-juego .pregunta {
+        font-size: 1.2em; 
+        padding: 10px;
+    }
+
+    .opcion .letra {
+        font-size: 20px; 
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .opcion .nombre {
+        font-size: 20px; 
+    }
+
+    .pantalla-juego {
+        margin: 20px auto; 
+    }
+
+    .pantalla-juego img {
+        width: 100%; 
+    }
+    .cole-esquina-derecha {
+        position: fixed;
+     top: 0;
+     right: 0;
+     margin: 10px;
+     max-width: 100px;
+     height: auto;
+    }
